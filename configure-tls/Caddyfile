@@ -1,8 +1,8 @@
 {
-  email <your-email>
+  email bronifty@gmail.com
 }
 
-<your hostname> {
+portainer.bronifty.xyz {
   reverse_proxy {
     to https://portainer:9443
 
