@@ -1,7 +1,7 @@
 # .ssh/config
+# run chmod 400 ubuntu_portainer.pem to make sure the key is not publicly viewable
 Host ec2-35-174-176-84.compute-1.amazonaws.com
   HostName ec2-35-174-176-84.compute-1.amazonaws.com
   User ubuntu
   IdentityFile ~/.aws/ubuntu_portainer.pem
 
-  
