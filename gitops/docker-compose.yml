@@ -6,12 +6,12 @@ services:
     container_name: nginx
     ports:
       - "5658:80"
+    networks:
+      - default
 
   httpd:
     image: httpd:latest
     container_name: httpd
-    ports:
-      - "5660:80"
       
   edgedb:
    image: edgedb/edgedb:latest
@@ -34,3 +34,5 @@ services:
 volumes:
   dbschema:
     driver: local
+networks:
+  default:

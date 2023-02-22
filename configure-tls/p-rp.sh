@@ -13,3 +13,9 @@ docker run -d -p 9443:9443 -p 8000:8000 \
 
 #docker volume create caddy-data caddy-config
 docker run -d -p 443:443 -p 80:80 --link portainer:portainer -v $(pwd)/Caddyfile:/etc/caddy/Caddyfile -v caddy-data:/data -v caddy-config:/config caddy:2-alpine
+
+docker run -d -p 443:443 -p 80:80 \
+--link portainer:portainer \
+--link nginx:nginx \
+--name caddy -v $(pwd)/Caddyfile:/etc/caddy/Caddyfile \
+-v caddy-data:/data -v caddy-config:/config caddy:2-alpine
