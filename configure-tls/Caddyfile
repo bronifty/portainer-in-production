@@ -12,3 +12,13 @@ portainer.bronifty.xyz {
     }
   }
 }
+portainer-test.bronifty.xyz {
+  reverse_proxy {
+    to https://nginx:5658
+
+    transport http {
+      tls
+      tls_insecure_skip_verify
+    }
+  }
+}
