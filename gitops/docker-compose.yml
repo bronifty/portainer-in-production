@@ -3,14 +3,17 @@ version: "3.7"
 services:
   nginx:
     image: nginx:latest
+    container_name: nginx
     ports:
       - "5657:80"
 
   httpd:
     image: httpd:latest
+    container_name: httpd
       
   edgedb:
    image: edgedb/edgedb:latest
+   container_name: edgedb
    command:
      - --admin-ui=enabled
    environment:
@@ -19,9 +22,13 @@ services:
    ports:
       - "5656:5656"
    volumes:
-    - "./dbschema:/dbschema"
+    - "dbschema:/dbschema"
    healthcheck:
      test: ["CMD", "curl", "-f", "http://localhost:5656/server/status/ready"]
      interval: 5s
      timeout: 1s
      retries: 10
+
+volumes:
+  dbschema:
+    driver: local
