@@ -1,1 +1,3 @@
 dbschema/edgeql-js
+/.vscode/settings.json
+/bench.js
