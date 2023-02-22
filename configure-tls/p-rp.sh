@@ -16,6 +16,5 @@ docker run -d -p 443:443 -p 80:80 --link portainer:portainer -v $(pwd)/Caddyfile
 
 docker run -d -p 443:443 -p 80:80 \
 --link portainer:portainer \
---link nginx:nginx \
 --name caddy -v $(pwd)/Caddyfile:/etc/caddy/Caddyfile \
 -v caddy-data:/data -v caddy-config:/config caddy:2-alpine
