@@ -5,7 +5,7 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - "5657:80"
+      - "5658:80"
 
   httpd:
     image: httpd:latest
