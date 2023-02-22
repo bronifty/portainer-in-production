@@ -12,6 +12,10 @@ services:
   httpd:
     image: httpd:latest
     container_name: httpd
+    ports:
+      - "5659:80"
+    networks:
+      - default
       
   edgedb:
    image: edgedb/edgedb:latest
